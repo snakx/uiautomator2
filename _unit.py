@@ -1,6 +1,6 @@
 import __bridge__ as b
 import _init as i
-import pk as p
+import _pk as p
 
 import logging
 
@@ -40,4 +40,5 @@ if device:
 
 # IP
 if device:
-    _bridge._ip(device)
+    ip = _bridge._ip(device)
+    logging.info(ip)

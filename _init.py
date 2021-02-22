@@ -1,6 +1,6 @@
 import requests
 import _main
-import pk
+import _pk
 import os
 import logging
 

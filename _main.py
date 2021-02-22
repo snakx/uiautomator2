@@ -2,6 +2,9 @@ import asyncio
 import aiofiles
 import requests as r
 import logging
+from subprocess import check_output
+from time import sleep
+from random import randint
 
 from ppadb.client_async import ClientAsync as AdbClient
 
@@ -14,7 +17,13 @@ class _main():
             return self.devices
         except Exception as e:
             logging.error(e.__context__)
-            return None
+            logging.error('snakx-agent has something wrong, auto recovering')
+            check_output(["adb", "kill-server"])
+            r = randint(5,10)
+            logging.error('Sleeping {} s'.format(str(r)))
+            sleep(r)
+            check_output(["adb", "start-server"])
+            await self._init()
 
     async def _devices(self):
         return self.devices
@@ -45,11 +54,9 @@ class _main():
     async def _pull(self, device, src, dest):
         return await device.pull(src, dest)
 
-
     # Shell
     async def _shell(self, device, cmd):
         return await device.shell(cmd)
-
 
     # Package install
     async def _install(self, device, pk):
@@ -62,10 +69,6 @@ class _main():
     # Package installed
     async def _pk(self, device, pk):
         return await device.is_installed(pk)
-
-    # Device IP
-    async def _ip(self, device):
-        return await self._shell(device, "ip route | awk '{print $9}'")
 
     # Send request to android-uiautomator2-server via http request
     async def _reg(self, url, data):

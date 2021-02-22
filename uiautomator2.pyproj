@@ -20,7 +20,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="pk.py">
+    <Compile Include="_pk.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ppadb\application.py" />

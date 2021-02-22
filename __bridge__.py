@@ -2,6 +2,8 @@ import asyncio
 import aiofiles
 import _init as i
 import _main as m
+import logging
+from time import sleep
 
 class Bridge():
 
@@ -36,4 +38,7 @@ class Bridge():
         return asyncio.run(self.adb._uninstall(device))
 
     def _ip(self, device):
-        return asyncio.run(self.adb.ip(device))
+        result = asyncio.run(self.adb._shell(device, "ip route"))
+        # 192.168.178.0/24 dev wlan0 proto kernel scope link src 192.168.178.77
+        _sp = str(result).split(' ')[8]
+        return _sp
