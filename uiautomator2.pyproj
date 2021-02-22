@@ -4,10 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9578a907-7355-4332-9044-604a35730cc4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>_unit.py</StartupFile>
+    <SearchPath>..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>uiautomator2</Name>
@@ -22,10 +20,77 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="uiautomator2.py" />
+    <Compile Include="pk.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ppadb\application.py" />
+    <Compile Include="ppadb\client.py" />
+    <Compile Include="ppadb\client_async.py" />
+    <Compile Include="ppadb\command\host\__init__.py" />
+    <Compile Include="ppadb\command\host_async\__init__.py" />
+    <Compile Include="ppadb\command\serial\__init__.py" />
+    <Compile Include="ppadb\command\transport\__init__.py" />
+    <Compile Include="ppadb\command\transport_async\__init__.py" />
+    <Compile Include="ppadb\command\__init__.py" />
+    <Compile Include="ppadb\connection.py" />
+    <Compile Include="ppadb\connection_async.py" />
+    <Compile Include="ppadb\device.py" />
+    <Compile Include="ppadb\device_async.py" />
+    <Compile Include="ppadb\keycode.py" />
+    <Compile Include="ppadb\plugins\client\__init__.py" />
+    <Compile Include="ppadb\plugins\device\batterystats.py" />
+    <Compile Include="ppadb\plugins\device\batterystats_section.py" />
+    <Compile Include="ppadb\plugins\device\cpustat.py" />
+    <Compile Include="ppadb\plugins\device\input.py" />
+    <Compile Include="ppadb\plugins\device\traffic.py" />
+    <Compile Include="ppadb\plugins\device\utils.py" />
+    <Compile Include="ppadb\plugins\device\wm.py" />
+    <Compile Include="ppadb\plugins\device\__init__.py" />
+    <Compile Include="ppadb\plugins\__init__.py" />
+    <Compile Include="ppadb\protocol.py" />
+    <Compile Include="ppadb\sync\stats.py" />
+    <Compile Include="ppadb\sync\__init__.py" />
+    <Compile Include="ppadb\sync_async\__init__.py" />
+    <Compile Include="ppadb\utils\logger.py" />
+    <Compile Include="ppadb\utils\__init__.py" />
+    <Compile Include="ppadb\__init__.py" />
+    <Compile Include="uiautomator2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_init.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_main.py" />
+    <Compile Include="_unit.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="__bridge__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="__init___.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logging_config.ini">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ppadb\" />
+    <Folder Include="ppadb\command\" />
+    <Folder Include="ppadb\command\host\" />
+    <Folder Include="ppadb\command\host_async\" />
+    <Folder Include="ppadb\command\serial\" />
+    <Folder Include="ppadb\command\transport\" />
+    <Folder Include="ppadb\command\transport_async\" />
+    <Folder Include="ppadb\plugins\" />
+    <Folder Include="ppadb\plugins\client\" />
+    <Folder Include="ppadb\plugins\device\" />
+    <Folder Include="ppadb\sync\" />
+    <Folder Include="ppadb\sync_async\" />
+    <Folder Include="ppadb\utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
