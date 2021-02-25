@@ -1,0 +1,1 @@
+java -jar x86-uiautomator2-server.jar

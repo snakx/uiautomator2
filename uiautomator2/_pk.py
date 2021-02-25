@@ -1,8 +1,8 @@
-__version__ = "android-uiautomator2-server%200.1.0%20Draft%201-debug.apk"
-__version_c__ = "android-uiautomator2-server 0.1.0 Draft 1-debug.apk"
-
-def _current():
-    return __version__
+__version_dbg = "snakx-uiautomator2-server-debug-androidTest.apk"
+__version_rel = "snakx-uiautomator2-server-release.apk"
 
 def _apk():
-    return __version_c__
+    return __version_dbg
+
+def _apk2():
+    return __version_rel

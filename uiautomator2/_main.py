@@ -72,4 +72,4 @@ class _main():
 
     # Send request to android-uiautomator2-server via http request
     async def _reg(self, url, data):
-        return r.post(url, data=data).text
+        return r.post(url, data=data, timeout=60).text

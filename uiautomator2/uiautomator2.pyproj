@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9578a907-7355-4332-9044-604a35730cc4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>_unit.py</StartupFile>
+    <StartupFile>_unit_snakx-agent.py</StartupFile>
     <SearchPath>..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -20,6 +20,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="_json0.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_x86.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="_pk.py">
       <SubType>Code</SubType>
     </Compile>
@@ -61,10 +67,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="_main.py" />
-    <Compile Include="_unit.py">
+    <Compile Include="_unit_snakx-agent.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="__bridge__.py">
+    <Compile Include="_url.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_bridge.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="__init___.py">

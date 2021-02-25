@@ -42,3 +42,11 @@ class Bridge():
         # 192.168.178.0/24 dev wlan0 proto kernel scope link src 192.168.178.77
         _sp = str(result).split(' ')[8]
         return _sp
+
+    def _shell(self, device, cmd):
+        result = asyncio.run(self.adb._shell(device, cmd))
+        return result
+
+    def _req(self, url, data):
+        result = asyncio.run(self.adb._reg(url, data))
+        return result
