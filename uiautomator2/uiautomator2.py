@@ -3,7 +3,7 @@ import logging
 import _json0 as jsn
 from _url import *
 import _x86 as j
-import subprocess
+from subprocess import check_output
 import time
 import os
 
@@ -17,7 +17,12 @@ class Client():
     def connect(self):
         try:
             # ToDo Implement shell script -> Linux, Mac
-            subprocess.call('cscript "{}/uiautomator2.vbs"'.format(os.getcwd()))
+            logging.info("Stopping script host")
+            out = check_output('taskkill /fi "imagename eq cscript.exe"')
+            logging.debug(out)
+            logging.info("Starting script host")
+            out = check_output('cscript "{}/uiautomator2.vbs"'.format(os.getcwd()))
+            logging.debug(out)
             # Wait for execution 
             time.sleep(10)
             return True
@@ -28,6 +33,8 @@ class Client():
     def _ping(self, host):
         action = jsn.Data()
         data = action.simple('ping')
-        url = dump_json('http', host, str(self.port))
+        url = dump_route('http', host, str(self.port))
+        logging.info(url)
+        logging.info(data)
         result = self._bridge._req(url, data)
         return result
