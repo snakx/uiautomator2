@@ -1,3 +1,3 @@
-def dump_route(proto, host, port):
-    url = proto + '://' + host + ':' + str(port) + '/json0'
+def dump_route(proto, host, port=4726):
+    url = proto + '://' + host + ':' + str(port) + '/'
     return url

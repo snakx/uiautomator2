@@ -10,7 +10,6 @@ import os
 class Client():
     
     def __init__(self):
-        self.port = 7771
         self._bridge = b.Bridge()
 
     # adb shell pm list instrumentation
@@ -31,9 +30,9 @@ class Client():
             return False
 
     def _ping(self, host):
-        action = jsn.Data()
-        data = action.simple('ping')
-        url = dump_route('http', host, str(self.port))
+        action = jsn.Builder()
+        data = action.payload('action', 'ping', None)
+        url = dump_route('http', host)
         logging.info(url)
         logging.info(data)
         result = self._bridge._req(url, data)
