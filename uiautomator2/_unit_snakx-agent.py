@@ -6,7 +6,7 @@ import logging
 from time import sleep
 
 _bridge = b.Bridge()
-agent = ui.Client()
+snakx_agent = ui.Client()
 
 # Init
 client = _bridge._client()
@@ -42,11 +42,11 @@ else:
 
 # Connect snakx-agent
 if device:
-    agent.connect()
+    snakx_agent.connect()
 
     sleep(3)
 
     # Ping
     ip = _bridge._ip(device)
-    result = agent._ping(ip)
+    result = snakx_agent.ping(ip)
     logging.debug(result)

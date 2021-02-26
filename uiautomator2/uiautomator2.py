@@ -12,7 +12,6 @@ class Client():
     def __init__(self):
         self._bridge = b.Bridge()
 
-    # adb shell pm list instrumentation
     def connect(self):
         try:
             # ToDo Implement shell script -> Linux, Mac
@@ -29,7 +28,7 @@ class Client():
             logging.error(e.__context__)
             return False
 
-    def _ping(self, host):
+    def ping(self, host):
         action = jsn.Builder()
         data = action.payload('action', 'ping', None)
         url = dump_route('http', host)
