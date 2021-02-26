@@ -28,11 +28,14 @@ class Client():
             logging.error(e.__context__)
             return False
 
-    def ping(self, host):
-        action = jsn.Builder()
-        data = action.payload('action', 'ping', None)
+    def executor(self, host, cmd, action, params):
+        builder = jsn.Builder()
+        data = builder.payload(cmd, action, params)
         url = dump_route('http', host)
         logging.info(url)
         logging.info(data)
         result = self._bridge._req(url, data)
         return result
+
+    def ping(self, host):
+        return self.executor(host, 'action', 'ping', None)
