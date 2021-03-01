@@ -3,6 +3,7 @@ import _bridge as b
 import _init as init
 import _pk as p
 import logging
+import json
 from time import sleep
 
 _bridge = b.Bridge()
@@ -49,4 +50,10 @@ if device:
     # Ping
     ip = _bridge._ip(device)
     result = snakx_agent.ping(ip)
+    logging.debug(result)
+
+    # Start App
+    ip = _bridge._ip(device)
+    data = {'packageName': 'com.instagram.android', 'mode': 1}
+    result = snakx_agent.startApp(ip, data)
     logging.debug(result)

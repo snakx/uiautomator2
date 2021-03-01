@@ -4,12 +4,11 @@ class Builder():
 
     def payload(self, cmd, action, params):
         if params:
+            # {'cmd': 'action', 'action': 'startApp', 'params': {'packageName': 'com.instagram.android', 'mode': 1}}
             data = {
                 "cmd": "{}".format(cmd),
                 "action": "{}".format(action),
-                "params": {
-                    params
-                    }
+                "params": params
                 }
         else:
             data = {
@@ -19,5 +18,4 @@ class Builder():
                     
                     }
                 }
-
         return json.dumps(data)

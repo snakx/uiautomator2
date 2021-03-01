@@ -39,3 +39,6 @@ class Client():
 
     def ping(self, host):
         return self.executor(host, 'action', 'ping', None)
+
+    def startApp(self, host, params):
+        return self.executor(host, 'action', 'startApp', params)
