@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9578a907-7355-4332-9044-604a35730cc4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>_unit_snakx-agent.py</StartupFile>
+    <StartupFile>uiautomator2.py</StartupFile>
     <SearchPath>..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb;..\pure-python-adb</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>

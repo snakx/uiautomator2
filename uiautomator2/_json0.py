@@ -4,7 +4,7 @@ class Builder():
 
     def payload(self, cmd, action, params):
         if params:
-            # {'cmd': 'action', 'action': 'startApp', 'params': {'packageName': 'com.instagram.android', 'mode': 1}}
+            # e. g. {'cmd': 'action', 'action': 'startApp', 'params': {'packageName': 'com.instagram.android', 'mode': 1}}
             data = {
                 "cmd": "{}".format(cmd),
                 "action": "{}".format(action),
