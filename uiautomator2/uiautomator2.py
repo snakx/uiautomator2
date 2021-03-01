@@ -195,3 +195,6 @@ class Client():
 
     def wakeup(self, host):
         return self.executor(host, 'action', 'wakeup', None)
+
+    def stop(self, host):
+        return self.executor(host, 'stop', '', None)
