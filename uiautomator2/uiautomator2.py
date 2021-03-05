@@ -79,15 +79,15 @@ class Client():
     def scrollOrientation(self, host, params):
         return self.executor(host, 'action', 'scrollOrientation', params)
 
-    # params = {'replace': 'true', 'text': ''}
+    # params = {'replace': True, 'text': ''}
     def scrollTo(self, host, params):
         return self.executor(host, 'action', 'scrollTo', params)
 
-    # params = {'replace': 'true', 'text': ''}
+    # params = {'replace': True, 'text': ''}
     def setText(self, host, params):
         return self.executor(host, 'action', 'setText', params)
 
-    # params = {'startX': 1, 'endX': 1, 'steps': 1}
+    # params = {'startX': '0.5', 'startY': '0.6', 'endX': '0.5', 'endY': '0.12', 'steps': 100}
     def swipe(self, host, params):
         return self.executor(host, 'action', 'swipe', params)
 
@@ -95,7 +95,7 @@ class Client():
     def swipeOrientation(self, host, params):
         return self.executor(host, 'action', 'swipeOrientation', params)
 
-    # params = {'flag': 'true'}
+    # params = {'flag': True}
     def toast(self, host, params):
         return self.executor(host, 'action', 'toast', params)
 
@@ -124,7 +124,7 @@ class Client():
     def findElement(self, host, params):
         return self.executor(host, 'action', 'findElement', params)
 
-    # params = {'multiple': 'false'}
+    # params = {'multiple': False}
     def find(self, host, params):
         return self.executor(host, 'action', 'find', params)
 
@@ -143,7 +143,7 @@ class Client():
     def fileList(self, host, params):
         return self.executor(host, 'action', 'fileList', params)
     
-    # params = {'compressLayout': 'true'}
+    # params = {'compressLayout': True}
     def compressedLayoutHierarchy(self, host, params):
         return self.executor(host, 'action', 'compressedLayoutHierarchy', params)
 
@@ -166,7 +166,7 @@ class Client():
     def jumpAppDetail(self, host, params):
         return self.executor(host, 'action', 'jumpAppDetail', params)
 
-    # params = {'flag': 'true'}
+    # params = {'flag': True}
     def getDeviceSize(self, host, params):
         return self.executor(host, 'action', 'getDeviceSize', params)
 
